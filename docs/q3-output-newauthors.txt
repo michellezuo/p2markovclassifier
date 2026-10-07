@@ -1,0 +1,132 @@
+data has 11 subdirs
+training         alcott	order 1 with 15714 unique tokens, 539696 tokens
+training        cbronte	order 1 with 20308 unique tokens, 556642 tokens
+training     dostoevsky	order 1 with 16919 unique tokens, 955589 tokens
+training          dumas	order 1 with 16749 unique tokens, 530842 tokens
+training          hesse	order 1 with 15189 unique tokens, 186468 tokens
+training          kafka	order 1 with 10887 unique tokens, 137797 tokens
+training       melville	order 1 with 22789 unique tokens, 493511 tokens
+training         proust	order 1 with 17579 unique tokens, 368899 tokens
+training    shakespeare	order 1 with 11192 unique tokens, 223930 tokens
+training          twain	order 1 with 20700 unique tokens, 607487 tokens
+training          verne	order 1 with 16225 unique tokens, 402366 tokens
+time: 0.65 for proust
+time: 0.35 for alcott
+time: 0.13 for hesse
+time: 0.32 for verne
+time: 1.13 for dumas
+time: 0.13 for kafka
+time: 0.14 for shakespeare
+time: 0.53 for twain
+time: 1.00 for dostoevsky
+time: 0.47 for cbronte
+time: 0.25 for melville
+*** -71.28	dumas for cyrano.txt
+-71.28	dumas
+-73.80	proust
+-94.09	kafka
+-94.75	cbronte
+-95.46	shakespeare
+-96.07	dostoevsky
+-96.88	hesse
+-97.00	verne
+-97.61	alcott
+-98.94	twain
+-100.56	melville
+likelihood ratio: 12.45
+time: 0.24 for proust
+time: 0.47 for alcott
+time: 0.23 for hesse
+time: 0.24 for verne
+time: 0.36 for dumas
+time: 0.20 for kafka
+time: 0.13 for shakespeare
+time: 0.37 for twain
+time: 1.01 for dostoevsky
+time: 0.39 for cbronte
+time: 0.23 for melville
+*** -54.59	kafka for goethe.txt
+-54.59	kafka
+-54.72	hesse
+-66.01	shakespeare
+-68.44	alcott
+-68.45	verne
+-68.62	proust
+-69.03	dumas
+-69.54	dostoevsky
+-69.80	cbronte
+-70.06	twain
+-70.49	melville
+likelihood ratio: 1.14
+time: 0.07 for proust
+time: 0.61 for alcott
+time: 0.06 for hesse
+time: 0.36 for verne
+time: 0.22 for dumas
+time: 0.04 for kafka
+time: 0.17 for shakespeare
+time: 0.63 for twain
+time: 1.24 for dostoevsky
+time: 0.54 for cbronte
+time: 0.40 for melville
+*** -45.30	shakespeare for marlowe.txt
+-45.30	shakespeare
+-49.08	dostoevsky
+-49.57	twain
+-50.05	cbronte
+-50.14	alcott
+-50.54	melville
+-51.22	verne
+-61.49	kafka
+-63.35	hesse
+-64.30	proust
+-64.63	dumas
+likelihood ratio: 43.80
+time: 0.21 for proust
+time: 0.49 for alcott
+time: 0.34 for hesse
+time: 0.38 for verne
+time: 0.53 for dumas
+time: 0.35 for kafka
+time: 0.19 for shakespeare
+time: 0.41 for twain
+time: 1.19 for dostoevsky
+time: 0.47 for cbronte
+time: 0.29 for melville
+*** -93.95	hesse for nietzsche.txt
+-93.95	hesse
+-94.93	kafka
+-113.27	shakespeare
+-117.21	alcott
+-117.48	verne
+-118.11	proust
+-118.51	dumas
+-118.89	dostoevsky
+-119.89	cbronte
+-120.13	twain
+-121.02	melville
+likelihood ratio: 2.67
+time: 0.35 for proust
+time: 0.18 for alcott
+time: 0.05 for hesse
+time: 0.12 for verne
+time: 0.75 for dumas
+time: 0.06 for kafka
+time: 0.10 for shakespeare
+time: 0.22 for twain
+time: 0.44 for dostoevsky
+time: 0.20 for cbronte
+time: 0.11 for melville
+*** -59.37	dumas for voltaire.txt
+-59.37	dumas
+-62.33	proust
+-81.96	cbronte
+-82.25	kafka
+-83.35	shakespeare
+-85.07	hesse
+-85.49	dostoevsky
+-85.75	verne
+-86.00	alcott
+-87.79	twain
+-88.60	melville
+likelihood ratio: 19.31
