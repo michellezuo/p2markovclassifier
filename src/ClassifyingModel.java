@@ -13,6 +13,7 @@ public class ClassifyingModel extends BaseMarkovModel{
     private HashMap<List<String>, List<String>> myMap;
     private HashSet<String> myVocabulary;
     private boolean myUseMemo;
+    private HashMap<List<String>, Map<String,Integer>> myCache;
 
     public ClassifyingModel(int size) {
         this(size,false);
@@ -23,16 +24,24 @@ public class ClassifyingModel extends BaseMarkovModel{
         myUseMemo = memoize;
         myMap = new HashMap<>();
         myVocabulary = new HashSet<>();
+        myCache = new HashMap<>();
     }
 
     private int tokenInContextCount(List<String> context, String token) {
         if (! myMap.containsKey(context)) return 0;
-        
+
+        if (myUseMemo && myCache.get(context).containsKey(token)) {
+            return myCache.get(context).get(token);
+        }
+
         int count = 0;
         for(String s : myMap.get(context)) {
             if (s.equals(token)) {
                 count += 1;
             }
+        }
+        if (myUseMemo) {
+            myCache.get(context).put(token, count);
         }
         return count;
     }
@@ -102,10 +111,16 @@ public class ClassifyingModel extends BaseMarkovModel{
             List<String> context = padded.subList(k, k+myModelSize);
             String next = padded.get(k+myModelSize);
             set.add(context);
-            double prob = 0.5; // this will be replaced by appropriate calculations/values
+
+            int contextCount = 0;
+            if (myMap.containsKey(context)) {
+                contextCount = myMap.get(context).size();
+            }
+            int nextCount = tokenInContextCount(context, next);
+            double prob = (nextCount + smoother) / (contextCount + smoother*vocabularySize());
             probTotal += Math.log(prob);
         }
-        return probTotal;  // must be normalized
+        return probTotal / set.size();
     }
 
     @Override
@@ -117,9 +132,7 @@ public class ClassifyingModel extends BaseMarkovModel{
             List<String> current = myWordSequence.subList(k, k+myModelSize);
             String next = myWordSequence.get(k+myModelSize);
 
-            // additional instance variables may need to be initialized
-            // when caching is implemented
-
+            myCache.putIfAbsent(current, new HashMap<>());
 
             myMap.putIfAbsent(current,new ArrayList<>());
             myMap.get(current).add(next);    
